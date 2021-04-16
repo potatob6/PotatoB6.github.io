@@ -4,19 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>星包客-在线代取</title>
     <style>
         *{
             padding: 0;
             margin: 0;
         }
         .topbar{
-            width: 100%;
+            position: relative;
+            width: 100vw;
             height: 3.5rem;
-            background: #393e46;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            overflow: hidden;
+        }
+        .topbar>*{
+            z-index: 2;
+        }
+        .topbar:after{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            filter: blur(10px);
+            z-index: 1;
+            margin: -1.4rem;
+            transform: translateY(-0.9rem);
+        }
+        .topbar:before{
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            content: '';
+            background: white;
+            opacity: 0.2;
+            z-index: 2;
         }
         h2:hover,
         h3:hover,
@@ -30,22 +57,62 @@
             align-items: center;
             margin-top: 1rem;
         }
+        h3{
+            font-weight: lighter;
+        }
+        .bg{
+            position: absolute;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+        }
+        .blur-div{
+            position: relative;
+            max-width: 700px;
+            min-width: 100px;
+            width: 90%;
+            height: 20rem;
+            background: white;
+            border-radius: 10px;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .blur-div:before{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            background: white;
+            opacity: 0.15;
+            z-index: 2;
+        }
+        .blur-div:after{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
+            background-size: cover;
+            filter: blur(20px);
+            margin: -5rem;
+        }
     </style>
+    <script>
+    </script>
 </head>
 <body>
+    <div class="bg"></div>
     <div class="topbar">
-        <div style="display: flex;flex-direction: row;">
-            <img src="26349833.png" style="margin-left:1rem;width: 2rem;height: 2rem;border-radius: 50%;"/>
-            <h2 style="margin-left: 1rem;color: white;font-weight: lighter;">星包客</h2>
-        </div>
-        <div style="display: flex;flex-direction: row;margin-right: 1.5rem;">
+        <h2 style="margin-left: 1.5rem;color: white;font-weight: lighter;width: 6rem;">星包客</h2>        
+        <img href="#" src="26349833.png" style="position: absolute;left: 50%;width: 2rem;height: 2rem;border-radius: 50%;"/>
+        <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 6rem;justify-content: flex-end;">
             <h3 style="color: white;font-weight: lighter;">关于</h3>
         </div>
     </div>
     <div class="page-body">
-        <div style="min-width: 500px;max-width: 1000px;width: 70%;background: #f9f7f7;display: flex;flex-direction:row;justify-content: center;">
-            <h1>网站施工中</h1>
-        </div>
+        <div class="blur-div"></div>
     </div>
 </body>
 </html>
