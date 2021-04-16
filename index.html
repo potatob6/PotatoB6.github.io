@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>星包客-在线代取</title>
+    <title>星包客-綫上代取</title>
     <style>
         *{
             padding: 0;
             margin: 0;
+        }
+        body{
+            min-height: 45rem;
+            overflow-x: hidden;
+            height: 100vh;
         }
         .topbar{
             position: relative;
@@ -43,7 +48,7 @@
             top: 0;left: 0;right: 0;bottom: 0;
             content: '';
             background: white;
-            opacity: 0.2;
+            opacity: 0.4;
             z-index: 2;
         }
         h2:hover,
@@ -58,7 +63,8 @@
             align-items: center;
             margin-top: 1rem;
         }
-        h3{
+        h3,
+        h5{
             font-weight: lighter;
         }
         .bg{
@@ -75,7 +81,7 @@
             max-width: 700px;
             min-width: 100px;
             width: 90%;
-            height: 20rem;
+            height: 25rem;
             background: white;
             border-radius: 10px;
             background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
@@ -87,7 +93,7 @@
             position: absolute;
             top: 0;left: 0;right: 0;bottom: 0;
             background: white;
-            opacity: 0.15;
+            opacity: 0.35;
             z-index: 2;
         }
         .blur-div:after{
@@ -100,6 +106,74 @@
             -webkit-filter: blur(20px);
             margin: -5rem;
         }
+        .dock{
+            position: absolute;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
+            background-size: cover;
+            height: 4rem;
+            bottom: 2rem;
+        }
+        .blur-cont{
+            position: absolute;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .blur-cont:hover::after{
+            opacity: 0.8;
+        }
+        .blur-cont::before{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
+            background-size: cover;
+            filter: blur(5px);
+            -webkit-filter: blur(5px);
+            margin: -2rem;
+            z-index: 1
+        }
+        .blur-cont::after{
+            transition: all 0.3s;
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            background: white;
+            opacity: 0.45;
+            z-index: 2;
+        }
+        .blur-father{
+            cursor: pointer;
+        }
+        .blur-father:hover>.blur-cont::after{
+            opacity: 0.8;
+        }
+        .pointer{
+            cursor: pointer;
+        }
+        .grid_t{
+            display: grid;
+            grid-template-rows: repeat(1fr,10);
+            grid-template-columns: 1fr;
+            gap: 0.3rem;
+        }
+        .bottom_bar_icons{
+            z-index: 4;
+            position: absolute;
+            width: 85%;
+            max-width: 1000px;
+            height: 5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fill,5rem);
+            grid-template-rows: 1fr;
+            justify-items: center;
+            align-items: center;
+        }
+        .icon{
+            width: 80%;
+            height: 80%;
+            border-radius: 1.5rem;
+        }
     </style>
     <script>
     </script>
@@ -107,14 +181,34 @@
 <body>
     <div class="bg"></div>
     <div class="topbar">
-        <h2 style="margin-left: 1.5rem;color: white;font-weight: lighter;width: 6rem;">星包客</h2>        
+        <h3 style="margin-left: 1.5rem;color: white;font-weight: lighter;width: 6rem;">星包客</h3>        
         <img href="#" src="26349833.png" style="position: absolute;left: 50%;width: 2rem;height: 2rem;border-radius: 50%;"/>
         <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 6rem;justify-content: flex-end;">
-            <h3 style="color: white;font-weight: lighter;">关于</h3>
+            <h3 style="color: white;font-weight: lighter;">關於</h3>
         </div>
     </div>
     <div class="page-body">
         <div class="blur-div"></div>
+        <div class="blur-father" style="position:relative;width: 13rem; height: 3rem;margin-top: 1.2rem;display: flex;justify-content: center;align-content: center;">
+            <div class="blur-cont pointer" style="border-radius: 1.2rem;width: 13rem;height: 3rem;"></div>
+            <h4 style="position: relative;z-index: 3;line-height: 3rem;font-weight: 500;">進入星包客</h4>
+        </div>
+    </div>
+    <div style="position: absolute;z-index: 2;left: 0;right: 0;bottom: 4rem;display: flex;justify-content: center;align-items: center;">
+        <div class="blur-cont grid_t" style="width: 85%;max-width: 1000px;height: 5rem;border-radius: 2.2rem;display: flex;flex-direction: row;justify-content: center;"></div>
+        <div class="bottom_bar_icons">
+            <div class="icon" style="background: red;"></div>
+            <div class="icon" style="background: rebeccapurple;"></div>
+            <div class="icon" style="background: gold;"></div>
+            <div class="icon" style="background: greenyellow;"></div>
+            <div class="icon" style="background: gray;"></div>
+            <div class="icon" style="background: purple;"></div>
+            <div class="icon" style="background: pink;"></div>
+            <div class="icon" style="background: rgb(129, 73, 233);"></div>
+            <div class="icon" style="background: rgb(41, 247, 185);"></div>
+            <div class="icon" style="background: rgb(245, 72, 222);"></div>
+            <div class="icon" style="background: rgb(243, 179, 41);"></div>
+        </div>
     </div>
 </body>
 </html>
