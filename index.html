@@ -67,7 +67,7 @@
         }
         .bg{
             position: absolute;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat;
+            background: url("wallhaven-m93e52_1920x1080.png") center center no-repeat;
             background-attachment: fixed;
             background-size: cover;
             width: 100vw;
@@ -108,6 +108,19 @@
             text-decoration: none;
             color:black;
         }
+        .icon{
+            width: 2rem;
+            height: 2rem;
+            margin-right: 1rem;
+        }
+        .word{
+            background: url("wordicon.png") center center no-repeat;
+            background-size: cover;
+        }
+        .zip{
+            background: url("WinRARicon.png") center center no-repeat;
+            background-size: cover;
+        }
     </style>
     <script>
     </script>
@@ -115,18 +128,32 @@
 <body>
     <div class="bg"></div>
     <div class="topbar">
-        <h3 style="margin-left: 1.5rem;color: white;font-weight: normal;width: 7rem;">星包客Blog</h3>        
+        <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 7rem;">星包客Blog</h3>        
         <img href="#" src="26349833.png" style="position: absolute;left: 50%;width: 2rem;height: 2rem;border-radius: 50%;"/>
         <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 7rem;justify-content: flex-end;">
-            <h3 style="color: white;font-weight: normal;">關於</h3>
+            <h3 style="color: black;font-weight: normal;">關於</h3>
         </div>
     </div>
     <div class="page-body">
         <div class="cont">
-            <a href="72_19软件工程7班.docx"><h3 class="item">72_19软件工程7班.数学实验.docx</h3></a>
+            <div class="icon zip"></div>
+            <a href="操作系统实验三源代码.zip"><h3 class="item">操作系统实验三源代码.zip</h3></a>
         </div>
         <div class="cont">
-            <a href="实验3：互斥.docx"><h3 class="item">实验三_互斥.docx</h3></a>
+            <div class="icon word"></div>
+            <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+        </div>
+        <div class="cont">
+            <div class="icon zip"></div>
+            <a href="操作系统实验二源代码.zip"><h3 class="item">操作系统实验二源代码.zip</h3></a>
+        </div>
+        <div class="cont">
+            <div class="icon word"></div>
+            <a href="72_19软件工程7班.docx"><h3 class="item">72_19软件工程7班.docx</h3></a>
+        </div>
+        <div class="cont">
+            <div class="icon word"></div>
+            <a href="实验3：互斥.docx"><h3 class="item">Java实验三_互斥.docx</h3></a>
         </div>
     </div>
 </body>
