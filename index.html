@@ -11,35 +11,28 @@
             margin: 0;
         }
         body{
-            min-height: 45rem;
             overflow-x: hidden;
             min-height: 100vh;
+            background: url("wallhaven-m93e52_1920x1080.png") center center no-repeat;
+            background-attachment: fixed;
+        }
+        body::-webkit-scrollbar{
+            display: none;
         }
         .topbar{
-            position: relative;
+            top: 0;
+            position: fixed;
             width: 100vw;
             height: 3.5rem;
-            backdrop-filter: blur(2.5rem);
+            backdrop-filter: blur(1.3rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
             overflow: hidden;
+            z-index: 5;
         }
         .topbar>*{
             z-index: 2;
-        }
-        .topbar:after{
-            content: '';
-            position: absolute;
-            top: 0;left: 0;right: 0;bottom: 0;
-            background: url("wallhaven-m93e52_1920x1080.png") center center;
-            background-attachment: fixed;
-            background-size: cover;
-            filter: blur(20px);
-            -webkit-filter: blur(20px);
-            z-index: 1;
-            margin: -2rem;
-            transform: translateY(-1.4rem);
         }
         .topbar:before{
             position: absolute;
@@ -59,7 +52,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 2rem;
+            margin-top: 5rem;
         }
         h3,
         h5{
@@ -67,11 +60,9 @@
         }
         .bg{
             position: absolute;
+            top: 0;right: 0;left: 0;bottom: 0;
             background: url("wallhaven-m93e52_1920x1080.png") center center no-repeat;
-            background-attachment: fixed;
             background-size: cover;
-            width: 100vw;
-            height: 100%;
             z-index: -1;
         }
         .cont{
@@ -79,6 +70,7 @@
             width: 80%;
             max-width: 59rem;
             min-width: 19rem;
+            min-height: 4rem;
             backdrop-filter: blur(2.5rem);
             -webkit-backdrop-filter: blur(2.5rem);
             border-radius: 0.5rem;
@@ -121,27 +113,50 @@
             background: url("WinRARicon.png") center center no-repeat;
             background-size: cover;
         }
+        .topic{
+            width: auto;
+            justify-content: center;
+            min-height: 3.3rem;
+            height: 3.3rem;
+            backdrop-filter: blur(2rem);
+            -webkit-backdrop-filter: blur(2rem);
+        }
+        .topic:before{
+            opacity: 0.4;
+        }
     </style>
     <script>
     </script>
 </head>
 <body>
-    <div class="bg"></div>
+    <!-- <div class="bg"></div> -->
     <div class="topbar">
         <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 7rem;">星包客Blog</h3>        
-        <img href="#" src="26349833.png" style="position: absolute;left: 50%;width: 2rem;height: 2rem;border-radius: 50%;"/>
+        <img href="#" src="26349833.png" style="justify-content: center;margin-left: -2rem;width: 2rem;height: 2rem;border-radius: 50%;"/>
         <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 7rem;justify-content: flex-end;">
             <h3 style="color: black;font-weight: normal;">关于</h3>
         </div>
     </div>
     <div class="page-body">
+        <!-- Java实验 -->
+        <div class="cont topic">
+            <h2>Java实验</h2>
+        </div>
         <div class="cont">
             <div class="icon zip"></div>
             <a href="Java实验二.rar"><h3 class="item">Java实验二源代码.rar</h3></a>
         </div>
         <div class="cont">
             <div class="icon zip"></div>
-            <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rarip</h3></a>
+            <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rar</h3></a>
+        </div>
+        <!-- 操作系统实验 -->
+        <div class="cont topic">
+            <h2>操作系统实验</h2>
+        </div>
+        <div class="cont">
+            <div class="icon zip"></div>
+            <a href="操作系统实验四源代码.rar"><h3 class="item">操作系统实验四源代码.rar</h3></a>
         </div>
         <div class="cont">
             <div class="icon zip"></div>
@@ -149,7 +164,7 @@
         </div>
         <div class="cont">
             <div class="icon word"></div>
-            <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+            <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
         </div>
         <div class="cont">
             <div class="icon zip"></div>
@@ -157,11 +172,16 @@
         </div>
         <div class="cont">
             <div class="icon word"></div>
-            <a href="72_19软件工程7班.docx"><h3 class="item">72_19软件工程7班.docx</h3></a>
+            <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+        </div>
+        
+        <!-- 其他实验 -->
+        <div class="cont topic">
+            <h2>其他</h2>
         </div>
         <div class="cont">
             <div class="icon word"></div>
-            <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
+            <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
         </div>
     </div>
 </body>
