@@ -18,7 +18,7 @@
         .topbar{
             position: relative;
             width: 100vw;
-            height: 3.5rem;
+            height: 3rem;
             background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat;
             background-attachment: fixed;
             background-size: cover;
@@ -61,7 +61,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 1rem;
+            margin-top: 2rem;
         }
         h3,
         h5{
@@ -76,103 +76,32 @@
             height: 100vh;
             z-index: -1;
         }
-        .blur-div{
+        .cont{
             position: relative;
-            max-width: 700px;
-            min-width: 100px;
-            width: 90%;
-            height: 25rem;
-            background: white;
-            border-radius: 10px;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
-            background-size: cover;
-            overflow: hidden;
-        }
-        .blur-div:before{
-            content: '';
-            position: absolute;
-            top: 0;left: 0;right: 0;bottom: 0;
-            background: white;
-            opacity: 0.35;
-            z-index: 2;
-        }
-        .blur-div:after{
-            content: '';
-            position: absolute;
-            top: 0;left: 0;right: 0;bottom: 0;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
-            background-size: cover;
-            filter: blur(20px);
-            -webkit-filter: blur(20px);
-            margin: -5rem;
-        }
-        .dock{
-            position: absolute;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
-            background-size: cover;
-            height: 4rem;
-            bottom: 2rem;
-        }
-        .blur-cont{
-            position: absolute;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
-            background-size: cover;
-            overflow: hidden;
-        }
-        .blur-cont:hover::after{
-            opacity: 0.8;
-        }
-        .blur-cont::before{
-            content: '';
-            position: absolute;
-            top: 0;left: 0;right: 0;bottom: 0;
-            background: url("wallhaven-m93e51_1920x1080.png") center center no-repeat fixed;
-            background-size: cover;
-            filter: blur(5px);
-            -webkit-filter: blur(5px);
-            margin: -2rem;
-            z-index: 1
-        }
-        .blur-cont::after{
-            transition: all 0.3s;
-            content: '';
-            position: absolute;
-            top: 0;left: 0;right: 0;bottom: 0;
-            background: white;
-            opacity: 0.45;
-            z-index: 2;
-        }
-        .blur-father{
-            cursor: pointer;
-        }
-        .blur-father:hover>.blur-cont::after{
-            opacity: 0.8;
-        }
-        .pointer{
-            cursor: pointer;
-        }
-        .grid_t{
-            display: grid;
-            grid-template-rows: repeat(1fr,10);
-            grid-template-columns: 1fr;
-            gap: 0.3rem;
-        }
-        .bottom_bar_icons{
-            z-index: 4;
-            position: absolute;
-            width: 85%;
-            max-width: 1000px;
-            height: 5rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fill,5rem);
-            grid-template-rows: 1fr;
-            justify-items: center;
-            align-items: center;
-        }
-        .icon{
             width: 80%;
-            height: 80%;
-            border-radius: 1.5rem;
+            max-width: 59rem;
+            min-width: 19rem;
+            height: 3rem;
+            backdrop-filter: blur(40px);
+            -webkit-backdrop-filter: blur(40px);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            display: flex;
+            padding: 0 1rem;
+            justify-content: flex-start;
+            align-items: center;
+            margin: 0 0 1rem 0;
+        }
+        .cont:before{
+            content: '';
+            position: absolute;
+            top: 0;right: 0;left: 0;bottom: 0;
+            background: white;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        .cont>*{
+            z-index: 2;
         }
     </style>
     <script>
@@ -181,33 +110,24 @@
 <body>
     <div class="bg"></div>
     <div class="topbar">
-        <h3 style="margin-left: 1.5rem;color: white;font-weight: lighter;width: 6rem;">星包客</h3>        
+        <h3 style="margin-left: 1.5rem;color: white;font-weight: lighter;width: 6rem;">星包客Blog</h3>        
         <img href="#" src="26349833.png" style="position: absolute;left: 50%;width: 2rem;height: 2rem;border-radius: 50%;"/>
         <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 6rem;justify-content: flex-end;">
             <h3 style="color: white;font-weight: lighter;">關於</h3>
         </div>
     </div>
     <div class="page-body">
-        <div class="blur-div"></div>
-        <div class="blur-father" style="position:relative;width: 13rem; height: 3rem;margin-top: 1.2rem;display: flex;justify-content: center;align-content: center;">
-            <div class="blur-cont pointer" style="border-radius: 1.2rem;width: 13rem;height: 3rem;"></div>
-            <h4 style="position: relative;z-index: 3;line-height: 3rem;font-weight: 500;">進入星包客</h4>
+        <div class="cont">
+            <h3>72_19软件工程7班.数学实验.docx</h3>
         </div>
-    </div>
-    <div style="position: absolute;z-index: 2;left: 0;right: 0;bottom: 4rem;display: flex;justify-content: center;align-items: center;">
-        <div class="blur-cont grid_t" style="width: 85%;max-width: 1000px;height: 5rem;border-radius: 2.2rem;display: flex;flex-direction: row;justify-content: center;"></div>
-        <div class="bottom_bar_icons">
-            <div class="icon" style="background: red;"></div>
-            <div class="icon" style="background: rebeccapurple;"></div>
-            <div class="icon" style="background: gold;"></div>
-            <div class="icon" style="background: greenyellow;"></div>
-            <div class="icon" style="background: gray;"></div>
-            <div class="icon" style="background: purple;"></div>
-            <div class="icon" style="background: pink;"></div>
-            <div class="icon" style="background: rgb(129, 73, 233);"></div>
-            <div class="icon" style="background: rgb(41, 247, 185);"></div>
-            <div class="icon" style="background: rgb(245, 72, 222);"></div>
-            <div class="icon" style="background: rgb(243, 179, 41);"></div>
+        <div class="cont">
+            <h3>实验3：互斥.docx</h3>
+        </div>
+        <div class="cont">
+            <h3>实验2：创建线程.docx</h3>
+        </div>
+        <div class="cont">
+            <h3>Java3实验.rar</h3>
         </div>
     </div>
 </body>
