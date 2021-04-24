@@ -130,17 +130,56 @@
         .topic:before{
             opacity: 0.4;
         }
+
+        .about_sheet{
+            position: fixed;
+            width: 30rem;
+            max-width: 30rem;
+            height: 10rem;
+            top: 4rem;
+            right: 1rem;
+            backdrop-filter: blur(4rem);
+            border-radius: 3rem;
+            z-index: 5;
+            overflow: hidden;
+            box-shadow: 0 0 4rem rgba(50,50,50,0.2);
+            opacity: 0;
+            transition: all 0.3s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .about_sheet::after{
+            position: absolute;
+            content: '';
+            top: 0;right: 0;left: 0;bottom: 0;
+            background: white;
+            opacity: 0.5;
+        }
+        #about_checkbox:checked~.about_sheet{
+            opacity: 1;
+        }
     </style>
     <script>
     </script>
 </head>
 <body>
-    <!-- <div class="bg"></div> -->
+    <input style="display: none;" type="checkbox" id="about_checkbox" />
+    <div class="about_sheet">
+        <h2 style="margin-bottom: 0.5rem;">PotatoB</h2>
+        <h4 style="margin-bottom: 0.5rem;">Deployed On Github</h4>
+        <h5>2021-04-16</h5>
+    </div>
     <div class="topbar">
-        <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 7rem;">PBBlog</h3>        
+        <a href="#">
+            <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 7rem;">PBBlog</h3>  
+        </a>        
         <img href="#" src="26349833.png" style="justify-content: center;margin-left: -1rem;width: 2rem;height: 2rem;border-radius: 50%;"/>
         <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 7rem;justify-content: flex-end;">
-            <h3 style="color: black;font-weight: normal;">关于</h3>
+            <label for="about_checkbox">
+                <h3 style="color: black;font-weight: normal;">关于</h3>
+            </label>
         </div>
     </div>
     <div class="page-body">
