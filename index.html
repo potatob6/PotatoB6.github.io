@@ -13,9 +13,9 @@
         body{
             overflow-x: hidden;
             min-height: 100vh;
-            background: url("wallhaven-m93e52_1920x1080.png") center center no-repeat;
+            /* background: url("wallhaven-m93e52_1920x1080.png") center center no-repeat;
             background-attachment: fixed;
-            background-size: cover;
+            background-size: cover */
         }
         body::-webkit-scrollbar{
             display: none;
@@ -104,6 +104,7 @@
         a{
             text-decoration: none;
             color:black;
+            font-weight: bold;
         }
         .icon{
             width: 2rem;
@@ -162,11 +163,22 @@
             opacity: 1;
             z-index: 5;
         }
+        video{
+            width: auto;
+            height: auto;
+
+            position: fixed;
+            top: 0;left: 0;right: 0;bottom: 0;
+
+        }
     </style>
     <script>
     </script>
 </head>
 <body>
+    <video autoplay loop muted>
+        <source src="Anime.mp4" type="video/mp4"></source>
+    </video>
     <input style="display: none;" type="checkbox" id="about_checkbox" />
     <div class="about_sheet">
         <h2 style="margin-bottom: 0.5rem;">PB</h2>
