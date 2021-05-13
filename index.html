@@ -141,7 +141,7 @@
             right: 1rem;
             backdrop-filter: blur(4rem);
             border-radius: 3rem;
-            z-index: 5;
+            z-index: -1;
             overflow: hidden;
             box-shadow: 0 0 4rem rgba(50,50,50,0.2);
             opacity: 0;
@@ -160,6 +160,7 @@
         }
         #about_checkbox:checked~.about_sheet{
             opacity: 1;
+            z-index: 5;
         }
     </style>
     <script>
