@@ -264,11 +264,11 @@
     <script>
         axios({
             method:'get',
-            url: 'http://1.116.21.195:8080/counterAdd',
+            url: 'https://wkesports.xyz:8443/counterAdd',
         });
         axios({
             method:'get',
-            url: "http://1.116.21.195:8080/counter",
+            url: "https://wkesports.xyz:8443/counter",
         }).then(
             (respone)=>{
                 document.querySelector("#pagecounter").innerHTML = "页面访问量:"+respone.data.counter
