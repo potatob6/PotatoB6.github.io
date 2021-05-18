@@ -172,8 +172,7 @@
             object-fit: cover;
         }
     </style>
-    <script>
-    </script>
+    <script src="axios.min.js"></script>
 </head>
 <body>
     <video autoplay loop muted>
@@ -187,10 +186,11 @@
     </div>
     <div class="topbar">
         <a href="#">
-            <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 7rem;">PB</h3>  
-        </a>        
+            <h3 style="margin-left: 1.5rem;color: black;font-weight: normal;width: 14rem;">PB</h3>  
+        </a>
         <img href="#" src="26349833.png" style="justify-content: center;margin-left: -1rem;width: 2rem;height: 2rem;border-radius: 50%;"/>
-        <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 7rem;justify-content: flex-end;">
+        <div style="display: flex;flex-direction: row;margin-right: 1.5rem;width: 14rem;justify-content: flex-end;">
+            <h3 id="pagecounter" style="margin-right: 0.5rem;font-weight: normal;"></h3>
             <label for="about_checkbox">
                 <h3 style="color: black;font-weight: normal;">关于</h3>
             </label>
@@ -260,5 +260,23 @@
             <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
         </div>
     </div>
+
+    <script>
+        axios({
+            method:'get',
+            url: 'http://1.116.21.195:8080/counterAdd',
+        });
+        axios({
+            method:'get',
+            url: "http://1.116.21.195:8080/counter",
+        }).then(
+            (respone)=>{
+                document.querySelector("#pagecounter").innerHTML = "页面访问量:"+respone.data.counter
+        }).catch(
+            (error)=>{
+                console.log(error)
+            }
+        )
+    </script>
 </body>
 </html>
