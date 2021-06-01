@@ -26,6 +26,7 @@
             width: 100vw;
             height: 3.5rem;
             backdrop-filter: blur(1.3rem);
+            -webkit-backdrop-filter: blur(1.3rem);
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -40,7 +41,7 @@
             top: 0;left: 0;right: 0;bottom: 0;
             content: '';
             background: white;
-            opacity: 0.7;
+            opacity: 0.4;
             z-index: 2;
         }
         h2:hover,
@@ -68,12 +69,10 @@
         }
         .cont{
             position: relative;
-            width: 80%;
+            width: 100%;
             max-width: 44rem;
             min-width: 19rem;
             min-height: 4rem;
-            backdrop-filter: blur(2.5rem);
-            -webkit-backdrop-filter: blur(2.5rem);
             border-radius: 1.6rem;
             overflow: hidden;
             display: flex;
@@ -82,14 +81,6 @@
             align-items: center;
             margin: 0 0 1rem 0;
             overflow-x: auto;
-        }
-        .cont:before{
-            content: '';
-            position: absolute;
-            top: 0;right: 0;left: 0;bottom: 0;
-            background: white;
-            opacity: 0.4;
-            z-index: 1;
         }
         .cont::-webkit-scrollbar{
             display: none;
@@ -128,15 +119,11 @@
             width: auto;
             justify-content: center;
             min-height: 3.3rem;
-            margin-top: 2.5rem;
+            margin-top: 1rem;
             height: 3.3rem;
             backdrop-filter: blur(2rem);
             -webkit-backdrop-filter: blur(2rem);
         }
-        .topic:before{
-            opacity: 0.4;
-        }
-
         .about_sheet{
             position: fixed;
             width: 30rem;
@@ -175,6 +162,28 @@
             z-index: -1;
             object-fit: cover;
         }
+        .container{
+            position: relative;
+            margin: 1rem 0;
+            width: 75%;
+            padding: 0 2rem;
+            max-width: 45rem;
+            min-width: 20rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            backdrop-filter: blur(2rem);
+            -webkit-backdrop-filter: blur(2rem);
+        }
+        .container::before{
+            content: '';
+            position: absolute;
+            top: 0;left: 0;right: 0;bottom: 0;
+            opacity: 0.2;
+            background: white;
+            border-radius: 1rem;
+        }
     </style>
     <script src="axios.min.js"></script>
 </head>
@@ -203,81 +212,92 @@
         <div class="cont topic" id="si">
             <h2 id="pagecounter" onclick="window.location.href='#'">页面访问量:</h2>
         </div>
-        <!-- <div class="cont topic" style="width: 80%;height: 20rem;backdrop-filter: blur(8rem);"></div> -->
-        <!-- 软件工程导论实验 -->
-        <div class="cont topic" id="si">
-            <h2 onclick="window.location.href='#si'">软件工程导论实验</h2>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="软件工程导论实验一.doc"><h3 class="item">软件工程导论实验一.doc</h3></a>
-        </div>
-        <!-- Java实验 -->
-        <div class="cont topic" id="java">
-            <h2 onclick="window.location.href='#java'">Java实验</h2>
-        </div>
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="Java_Demo4.rar"><h3 class="item">Java实验四源代码.rar</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rar</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="Java实验二.rar"><h3 class="item">Java实验二源代码.rar</h3></a>
-        </div>
-        <!-- 操作系统实验 -->
-        <div class="cont topic" id="os">
-            <h2 onclick="window.location.href='#os'">操作系统实验</h2>
+
+        <div class="container">
+            <!-- <div class="cont topic" style="width: 80%;height: 20rem;backdrop-filter: blur(8rem);"></div> -->
+            <!-- 软件工程导论实验 -->
+            <div class="cont" id="si">
+                <h2 onclick="window.location.href='#si'">软件工程导论实验</h2>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="软件工程导论实验一.doc"><h3 class="item">软件工程导论实验一.doc</h3></a>
+            </div>
         </div>
 
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="ex6_source.rar"><h3 class="item">操作系统实验六源代码.rar</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="ex6.doc"><h3 class="item">操作系统实验六共享内存.doc</h3></a>
+        <div class="container">
+            <!-- Java实验 -->
+            <div class="cont" id="java">
+                <h2 onclick="window.location.href='#java'">Java实验</h2>
+            </div>
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="Java_Demo4.rar"><h3 class="item">Java实验四源代码.rar</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rar</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="Java实验二.rar"><h3 class="item">Java实验二源代码.rar</h3></a>
+            </div>
         </div>
 
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="操作系统实验四源代码.rar"><h3 class="item">操作系统实验四源代码.rar</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="操作系统实验四互斥.doc"><h3 class="item">操作系统实验四互斥.doc</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="操作系统实验三源代码.zip"><h3 class="item">操作系统实验三源代码.zip</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon zip"></div>
-            <a href="操作系统实验二源代码.zip"><h3 class="item">操作系统实验二源代码.zip</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+        <div class="container">
+            <!-- 操作系统实验 -->
+            <div class="cont" id="os">
+                <h2 onclick="window.location.href='#os'">操作系统实验</h2>
+            </div>
+
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="ex6_source.rar"><h3 class="item">操作系统实验六源代码.rar</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="ex6.doc"><h3 class="item">操作系统实验六共享内存.doc</h3></a>
+            </div>
+
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="操作系统实验四源代码.rar"><h3 class="item">操作系统实验四源代码.rar</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="操作系统实验四互斥.doc"><h3 class="item">操作系统实验四互斥.doc</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="操作系统实验三源代码.zip"><h3 class="item">操作系统实验三源代码.zip</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon zip"></div>
+                <a href="操作系统实验二源代码.zip"><h3 class="item">操作系统实验二源代码.zip</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+            </div>
         </div>
         
-        <!-- 其他 -->
-        <div class="cont topic" id="other">
-            <h2 onclick="window.location.href='#other'">其他</h2>
-        </div>
-        <div class="cont">
-            <div class="icon word"></div>
-            <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
-        </div>
-        <div class="cont">
-            <div class="icon pkt"></div>
-            <a href="topo.pkt"><h3 class="item">计网初始架设.pkt</h3></a>
+        <div class="container">
+            <!-- 其他 -->
+            <div class="cont" id="other">
+                <h2 onclick="window.location.href='#other'">其他</h2>
+            </div>
+            <div class="cont">
+                <div class="icon word"></div>
+                <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
+            </div>
+            <div class="cont">
+                <div class="icon pkt"></div>
+                <a href="topo.pkt"><h3 class="item">计网初始架设.pkt</h3></a>
+            </div>
         </div>
     </div>
 
