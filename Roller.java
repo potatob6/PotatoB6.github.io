@@ -22,7 +22,7 @@ public class Roller{
                     
                     case "-w":
                         pointer++;
-                        w = Integer.parseInt(args[pointer]);
+                        w = Float.parseFloat(args[pointer]);
                         pointer++;
                         continue;
                     case "--help":
