@@ -1,7 +1,7 @@
 public class Roller{
     static float timer = .0f;
     public static void main(String[] args) {
-        //Ñ¡Ïî½âÎö
+        //é€‰é¡¹è§£æ
         int A = 20;
         int b = 20;
         float w = 1;
@@ -26,17 +26,17 @@ public class Roller{
                         pointer++;
                         continue;
                     case "--help":
-                        System.out.println("Ê¹ÓÃÖ¸ÄÏ:\n\t-A <num>\t;Õñ·ù\n\t-b <num> "+
-                        "\t;Æ«ÖÃ\n\t-w <num>\t;1/ÆµÂÊ");
+                        System.out.println("ä½¿ç”¨æŒ‡å—:\n\t-A <num>\t;æŒ¯å¹…\n\t-b <num> "+
+                        "\t;åç½®\n\t-w <num>\t;1/é¢‘ç‡");
                         System.exit(0);
                     default:
-                        System.out.printf("Î´Öª²ÎÊı:%s",args[pointer]);
-                        System.out.println("Ê¹ÓÃÖ¸ÄÏ:\n\t-A <num>\t;Õñ·ù\n\t-b <num> "+
-                        "\t;Æ«ÖÃ\n\t-w <num>\t;1/ÆµÂÊ");
+                        System.out.printf("æœªçŸ¥å‚æ•°:%s",args[pointer]);
+                        System.out.println("ä½¿ç”¨æŒ‡å—:\n\t-A <num>\t;æŒ¯å¹…\n\t-b <num> "+
+                        "\t;åç½®\n\t-w <num>\t;1/é¢‘ç‡");
                         System.exit(1);
                 }
             }catch(NumberFormatException e){
-                System.out.println(args[pointer]+"Ê¹ÓÃÁË·ÇÊı×ÖÀàĞÍ");
+                System.out.println(args[pointer]+"ä½¿ç”¨äº†éæ•°å­—ç±»å‹");
                 System.exit(3);
             }
         }
@@ -51,7 +51,7 @@ public class Roller{
                 break;
             }
         }
-        System.out.println("³ÌĞòÒì³£ÍË³ö");
+        System.out.println("ç¨‹åºå¼‚å¸¸é€€å‡º");
         System.exit(2);
     }
 
