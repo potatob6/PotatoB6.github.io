@@ -12,4 +12,8 @@ if [ ! $? ]; then
     exit 1
 fi
 dd if=a.bin of=myhd.img bs=512 count=1 conv=notrunc
-bochs -f mybochsrc
+if [ $# -lt 1 ]; then
+	bochs -f mybochsrc
+else
+	echo "compile and no run"
+fi
