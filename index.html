@@ -81,7 +81,7 @@
             padding: 0 1rem;
             justify-content: flex-start;
             align-items: center;
-            margin: 0 0 1rem 0;
+            margin: 0 0 0.5rem 0;
             overflow-x: auto;
         }
         .cont::-webkit-scrollbar{
@@ -140,6 +140,9 @@
             box-shadow: 0 0 4rem rgba(50,50,50,0.2);
             opacity: 0;
             transition: all 0.3s;
+            transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -206,8 +209,36 @@
             background-color: black;
             z-index: 3;
         }
+        .content{
+            align-self: flex-start;
+            overflow: hidden;
+            height: 0;
+            transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+        }
+        .trisvg{
+            width: 1.3rem;
+            height: auto;
+            justify-items: center;
+            transform: rotate(540deg);
+            transition: all 0.3s;
+            -moz-transition: all 0.3s;
+            -webkit-transition: all 0.3s;
+        }
+        .conth:hover{
+            cursor: pointer;
+        }
+        .conth{
+            justify-content: space-between;
+        }
+        input[type=checkbox]:checked ~label img{
+            transform: rotate(0);
+        }
+        input[type=checkbox]:checked ~.content{
+            height: auto;
+        }
     </style>
-    <script src="axios.min.js"></script>
 </head>
 <body>
     <!-- <video autoplay loop muted>
@@ -235,274 +266,316 @@
             
         </div>
         <div class="container">
-            <div class="cont" id="sa">
+            <!-- 软件架构实验 -->
+            <input id="sa_ck" type="checkbox" hidden>
+            <label id="sa" class="cont conth" for="sa_ck">
                 <h2 onclick="window.location.href='#si'">软件架构实验</h2>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/软件架构实验二.doc"><h3 class="item">软件架构实验二.doc</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/软件架构实验一.doc"><h3 class="item">软件架构实验一.doc</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="grade3/软件架构实验一源码.zip"><h3 class="item">软件架构实验一源码.zip</h3></a>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+
+            <div class="content" id="sa_cont">
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/软件架构实验二.doc"><h3 class="item">软件架构实验二.doc</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/软件架构实验一.doc"><h3 class="item">软件架构实验一.doc</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="grade3/软件架构实验一源码.zip"><h3 class="item">软件架构实验一源码.zip</h3></a>
+                </div>
             </div>
         </div>
 		<div class="container">	
-            <div class="cont" id="web">
-                <h2 onclick="window.location.href='#web">Web程序设计</h2>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="grade3/实验五.zip"><h3 class="item">Web实验五.zip</h3></a>
+            <!-- Web程序设计 -->
+            <input id="web_ck" type="checkbox" hidden>
+            <label id="web" class="cont conth" for="web_ck">
+                <h2 onclick="window.location.href='#web'">Web程序设计</h2>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+
+            <div class="content" id="web_cont">
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="grade3/实验五.zip"><h3 class="item">Web实验五.zip</h3></a>
+                </div>
             </div>
 		</div>
         <div class="container">
             <!-- <div class="cont topic" style="width: 80%;height: 20rem;backdrop-filter: blur(8rem);"></div> -->
             <!-- Linux实验 -->
-            <div class="cont" id="si">
-                <h2 onclick="window.location.href='#si'">Linux实验</h2>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验十三.docx"><h3 class="item">Linux实验十三.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/LinuxExp12.docx"><h3 class="item">Linux实验十二.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验11附加.docx"><h3 class="item">Linux实验十一附加.docx</h3></a>
-            </div>
-			<div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验十一.docx"><h3 class="item">Linux实验十一.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验十.docx"><h3 class="item">Linux实验十.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验九.docx"><h3 class="item">Linux实验九.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验八.docx"><h3 class="item">Linux实验八.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验七.docx"><h3 class="item">Linux实验七.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验六.docx"><h3 class="item">Linux实验六.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验五.docx"><h3 class="item">Linux实验五.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验四.docx"><h3 class="item">Linux实验四.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验三.docx"><h3 class="item">Linux实验三.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验二.docx"><h3 class="item">Linux实验二.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/Linux实验一.docx"><h3 class="item">Linux实验一.docx</h3></a>
+            <input id="linux_ck" type="checkbox" hidden>
+            <label id="linux" class="cont conth" for="linux_ck">
+                <h2 onclick="window.location.href='#linux'">Linux实验</h2>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+
+            <div class="content">
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验十三.docx"><h3 class="item">Linux实验十三.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/LinuxExp12.docx"><h3 class="item">Linux实验十二.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验11附加.docx"><h3 class="item">Linux实验十一附加.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验十一.docx"><h3 class="item">Linux实验十一.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验十.docx"><h3 class="item">Linux实验十.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验九.docx"><h3 class="item">Linux实验九.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验八.docx"><h3 class="item">Linux实验八.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验七.docx"><h3 class="item">Linux实验七.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验六.docx"><h3 class="item">Linux实验六.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验五.docx"><h3 class="item">Linux实验五.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验四.docx"><h3 class="item">Linux实验四.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验三.docx"><h3 class="item">Linux实验三.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验二.docx"><h3 class="item">Linux实验二.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/Linux实验一.docx"><h3 class="item">Linux实验一.docx</h3></a>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <!-- x86汇编实验 -->
-            <div class="cont" id="java">
-                <h2 onclick="window.location.href='#java'">x86汇编实验</h2>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86实验十二.docx"><h3 class="item">x86汇编实验十二.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86实验十一.docx"><h3 class="item">x86汇编实验十一.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验十.docx"><h3 class="item">x86汇编实验十.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验九.docx"><h3 class="item">x86汇编实验九.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验八.docx"><h3 class="item">x86汇编实验八.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/X86汇编实验七.docx"><h3 class="item">x86汇编实验七.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验六.docx"><h3 class="item">x86汇编实验六.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验五.docx"><h3 class="item">x86汇编实验五.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验四.docx"><h3 class="item">x86汇编实验四.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验三.docx"><h3 class="item">x86汇编实验三.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验二.docx"><h3 class="item">x86汇编实验二.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="grade3/x86汇编实验一.docx"><h3 class="item">x86汇编实验一.docx</h3></a>
+            <input id="x86_ck" type="checkbox" hidden>
+            <label id="x86" class="cont conth" for="x86_ck">
+                <h2 onclick="window.location.href='#x86'">x86汇编实验</h2>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+
+            <div class="content">
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86实验十二.docx"><h3 class="item">x86汇编实验十二.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86实验十一.docx"><h3 class="item">x86汇编实验十一.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验十.docx"><h3 class="item">x86汇编实验十.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验九.docx"><h3 class="item">x86汇编实验九.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验八.docx"><h3 class="item">x86汇编实验八.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/X86汇编实验七.docx"><h3 class="item">x86汇编实验七.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验六.docx"><h3 class="item">x86汇编实验六.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验五.docx"><h3 class="item">x86汇编实验五.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验四.docx"><h3 class="item">x86汇编实验四.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验三.docx"><h3 class="item">x86汇编实验三.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验二.docx"><h3 class="item">x86汇编实验二.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="grade3/x86汇编实验一.docx"><h3 class="item">x86汇编实验一.docx</h3></a>
+                </div>
             </div>
         </div>
         <hr />
         <div class="container">
             <!-- <div class="cont topic" style="width: 80%;height: 20rem;backdrop-filter: blur(8rem);"></div> -->
             <!-- 软件工程导论实验 -->
-            <div class="cont" id="si">
+            <input id="si_ck" type="checkbox" hidden>
+            <label id="si" class="cont conth" for="si_ck">
                 <h2 onclick="window.location.href='#si'">软件工程导论实验</h2>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="软件工程导论实验一.doc"><h3 class="item">软件工程导论实验一.doc</h3></a>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+            <div class="content">
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="软件工程导论实验一.doc"><h3 class="item">软件工程导论实验一.doc</h3></a>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <!-- Java实验 -->
-            <div class="cont" id="java">
+            <input id="java_ck" type="checkbox" hidden>
+            <label id="java" class="cont conth" for="java_ck">
                 <h2 onclick="window.location.href='#java'">Java实验</h2>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="Java_Demo4.rar"><h3 class="item">Java实验四源代码.rar</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rar</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="Java实验二.rar"><h3 class="item">Java实验二源代码.rar</h3></a>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+            
+            <div class="content">
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="Java_Demo4.rar"><h3 class="item">Java实验四源代码.rar</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="Java实验三.rar"><h3 class="item">Java实验三源代码.rar</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="Java实验二.rar"><h3 class="item">Java实验二源代码.rar</h3></a>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <!-- 操作系统实验 -->
-            <div class="cont" id="os">
-                <h2 onclick="window.location.href='#os'">操作系统实验</h2>
-            </div>
+            <input id="operating-sys_ck" type="checkbox" hidden>
+            <label id="operating-sys" class="cont conth" for="operating-sys_ck">
+                <h2 onclick="window.location.href='#operating-sys'">操作系统实验</h2>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
 
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="ex6_source.rar"><h3 class="item">操作系统实验六源代码.rar</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="ex6.doc"><h3 class="item">操作系统实验六共享内存.doc</h3></a>
-            </div>
-
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="操作系统实验四源代码.rar"><h3 class="item">操作系统实验四源代码.rar</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="操作系统实验四互斥.doc"><h3 class="item">操作系统实验四互斥.doc</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="操作系统实验三源代码.zip"><h3 class="item">操作系统实验三源代码.zip</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon zip"></div>
-                <a href="操作系统实验二源代码.zip"><h3 class="item">操作系统实验二源代码.zip</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+            <div class="content">
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="ex6_source.rar"><h3 class="item">操作系统实验六源代码.rar</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="ex6.doc"><h3 class="item">操作系统实验六共享内存.doc</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="操作系统实验四源代码.rar"><h3 class="item">操作系统实验四源代码.rar</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="操作系统实验四互斥.doc"><h3 class="item">操作系统实验四互斥.doc</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="操作系统实验三源代码.zip"><h3 class="item">操作系统实验三源代码.zip</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="实验3：互斥.docx"><h3 class="item">操作系统实验三_互斥.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon zip"></div>
+                    <a href="操作系统实验二源代码.zip"><h3 class="item">操作系统实验二源代码.zip</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="操作系统实验二创建线程.doc"><h3 class="item">操作系统实验二创建线程.doc</h3></a>
+                </div>
             </div>
         </div>
         
         <div class="container">
             <!-- 其他 -->
-            <div class="cont" id="other">
+            <input id="other_ck" type="checkbox" hidden>
+            <label id="other" class="cont conth" for="other_ck">
                 <h2 onclick="window.location.href='#other'">其他</h2>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="compile.sh"><h3 class="item">compile.sh</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="mybochsrc"><h3 class="item">mybochsrc</h3></a>
-	        </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="a.asm"><h3 class="item">a.asm</h3></a>
-	        </div>
-            <div class="cont">
-                <div class="icon word"></div>
-                <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon pkt"></div>
-                <a href="topo.pkt"><h3 class="item">计网初始架设.pkt</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon pkt"></div>
-                <a href="./Roller.class"><h3 class="item">Roller.class</h3></a>
-            </div>
-            <div class="cont">
-                <div class="icon pkt"></div>
-                <a href="./Roller.java"><h3 class="item">Roller.java</h3></a>
+                <img class="trisvg" src="./tri.svg" alt="" title="下拉菜单">
+            </label>
+
+            <div class="content">
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="compile.sh"><h3 class="item">compile.sh</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="mybochsrc"><h3 class="item">mybochsrc</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="a.asm"><h3 class="item">a.asm</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon word"></div>
+                    <a href="72_19软件工程7班.docx"><h3 class="item">数学实验.docx</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon pkt"></div>
+                    <a href="topo.pkt"><h3 class="item">计网初始架设.pkt</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon pkt"></div>
+                    <a href="./Roller.class"><h3 class="item">Roller.class</h3></a>
+                </div>
+                <div class="cont">
+                    <div class="icon pkt"></div>
+                    <a href="./Roller.java"><h3 class="item">Roller.java</h3></a>
+                </div>
             </div>
         </div>
     </div>
 
     <script>
-        axios({
-            method:'get',
-            url: 'https://wkesports.xyz:8443/counterAdd',
-        });
-        axios({
-            method:'get',
-            url: "https://wkesports.xyz:8443/counter",
-        }).then(
-            (respone)=>{
-                document.querySelector("#pagecounter").innerHTML = "页面访问量:"+respone.data.counter
-        }).catch(
-            (error)=>{
-                console.log(error)
+        var l = document.getElementsByClassName("content");
+        var names = {}
+        for(var i = 0;i<l.length;i++){
+            names[l[i].id] = {'h':l[i].scrollHeight,'exp':0};
+            // console.log(l[i].scrollHeight);
+        }
+        function expandToFullHeight(name){
+            if(names[name].exp == 0)
+            {
+                let o = document.getElementById(name)
+                o.style.maxHeight = names[name].h
+                names[name].exp = 1;
+                return;
             }
-        )
+            let o = document.getElementById(name)
+            o.style.maxHeight = 0;
+            names[name].exp = 0;
+        }
     </script>
 </body>
 </html>
