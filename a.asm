@@ -5,6 +5,7 @@
     mov di, 0
 	call clear ;清屏
 	mov di, 0
+	mov cx, 0
 	;在这里开始写代码-------
 	
 
