@@ -212,10 +212,10 @@
         .content{
             align-self: flex-start;
             overflow: hidden;
-            height: 0;
-            transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            -webkit-transition: all 0.3s;
+            max-height: 0;
+            transition: all 0.8s;
+            -moz-transition: all 0.8s;
+            -webkit-transition: all 0.8s;
         }
         .trisvg{
             width: 1.3rem;
@@ -243,7 +243,7 @@
             transform: rotate(0);
         }
         input[type=checkbox]:checked ~.content{
-            height: auto;
+            max-height: 200vh;
         }
     </style>
 </head>
