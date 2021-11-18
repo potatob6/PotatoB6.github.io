@@ -5,6 +5,12 @@ fi
 if [ ! -f "a.asm" ]; then
     wget https://potatob666.github.io/a.asm
 fi
+
+if [ ! -f "readfile.elf" ]; then
+    wget https://potatob666.github.io/readfile.elf
+fi
+chmod +x ./readfile.elf
+chmod +x $0
 dd if=/dev/zero of=myhd.img bs=512 count=10240
 nasm -f bin a.asm -o a.bin
 if [ ! $? ]; then
