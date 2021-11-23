@@ -14,7 +14,7 @@
         body{
             overflow-x: hidden;
             min-height: 100vh;
-            background: url("wallpaper.png") center center no-repeat;
+            background: #cadefc center center no-repeat;
             background-attachment: fixed;
             background-size: cover
         }
@@ -131,8 +131,8 @@
             min-height: 3.3rem;
             margin-top: 1rem;
             height: 3.3rem;
-            backdrop-filter: blur(2rem);
-            -webkit-backdrop-filter: blur(2rem);
+            /* backdrop-filter: blur(2rem);
+            -webkit-backdrop-filter: blur(2rem); */
         }
         .about_sheet{
             position: fixed;
@@ -141,11 +141,11 @@
             height: 10rem;
             top: 4rem;
             right: 1rem;
-            backdrop-filter: blur(4rem);
+            /* backdrop-filter: blur(4rem); */
             border-radius: 3rem;
             z-index: -1;
             overflow: hidden;
-            box-shadow: 0 0 4rem rgba(50,50,50,0.2);
+            /* box-shadow: 0 0 4rem rgba(50,50,50,0.2); */
             opacity: 0;
             transition: all 0.3s;
             transition: all 0.3s;
@@ -161,7 +161,7 @@
             content: '';
             top: 0;right: 0;left: 0;bottom: 0;
             background: white;
-            opacity: 0.5;
+            opacity: 1;
         }
         #about_checkbox:checked~.about_sheet{
             opacity: 1;
@@ -186,17 +186,21 @@
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
-            backdrop-filter: blur(2rem);
-            -webkit-backdrop-filter: blur(2rem);
+            /* backdrop-filter: blur(2rem);
+            -webkit-backdrop-filter: blur(2rem); */
             border-radius: 1rem;
-            box-shadow: 0 0 80px rgba(170,170,170,20);
+            box-shadow: -8px -8px 20px 2px rgba(240,240,240,200),
+                        8px 8px 20px 2px rgba(150,150,150,200);
+                        /* 2px 2px 10px rgba(250,250,250,200) inset,
+                        -2px -2px 10px rgba(150,150,150,200) inset; */
         }
         .container::before{
+            z-index: -1;
             content: '';
             position: absolute;
             top: 0;left: 0;right: 0;bottom: 0;
-            opacity: 0.2;
-            background: white;
+            opacity: 1;
+            background: #cadefc;
             border-radius: 1rem;
         }
         hr{
@@ -207,8 +211,8 @@
             border: none;
             border-radius: 0.3rem;
             opacity: 40%;
-            backdrop-filter: blur(2rem);
-            -webkit-backdrop-filter: blur(2rem);
+            /* backdrop-filter: blur(2rem);
+            -webkit-backdrop-filter: blur(2rem); */
             z-index: 2;
         }
         hr::before{
@@ -262,8 +266,8 @@
     </video> -->
     <input style="display: none;" type="checkbox" id="about_checkbox" />
     <div class="about_sheet">
-        <h2 style="margin-bottom: 0.5rem;">PB</h2>
-        <h4 style="margin-bottom: 0.5rem;">Deployed On Github</h4>
+        <h2 style="margin-bottom: 0.5rem;color: black;">PB</h2>
+        <h4 style="margin-bottom: 0.5rem;color: black;">Deployed On Github</h4>
         <h5>2021-04-16</h5>
     </div>
     <div class="topbar">
