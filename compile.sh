@@ -6,8 +6,15 @@ if [ ! -f "a.asm" ]; then
     wget https://potatob666.github.io/a.asm
 fi
 
-if [ ! -f "readfile.elf" ]; then
-    wget https://potatob666.github.io/readfile.elf
+if [[ ! (-e "readfile-armv7l" || -e "readfile-x86_64" ) ]]; then
+	arch=$(uname -a|cut -f 12 -d ' ')
+	echo $arch
+	if [ $arch == "armv7l" ]; then
+		wget https://potatob666.github.io/readfile-armv7l	
+	fi
+	if [ $arch == "x86_64" ]; then
+		wget https://potatob666.github.io/readfile-x86_64
+	fi
 fi
 chmod +x ./readfile.elf
 chmod +x $0
