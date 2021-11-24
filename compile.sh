@@ -65,6 +65,7 @@ if [ $fileCounts -eq 0 ]; then
 	fi
 fi
 dd if=$firstBin of=myhd.img bs=512 count=1 conv=notrunc
+echo "[Compile.sh] Writed $firstBin to myhd.img"
 if [ $onlyCompile -eq 0 ]; then
 	bochs -f mybochsrc
 else
