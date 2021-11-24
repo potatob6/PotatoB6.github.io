@@ -18,37 +18,53 @@ if [[ ! (-e "readfile-armv7l" || -e "readfile-x86_64" ) ]]; then
 	chmod +x readfile-$arch
 fi
 chmod +x $0
-filename="a"
+firstBin="a.bin"
 paramCounts=$#
-fullFileName="a.asm"
 onlyCompile=0
-for i in $(seq $paramCounts):
-do
-	if [ $1 == "-c" ]; then
-		onlyCompile=1
-	elif [ $1 == "-h" ]; then
-		echo "Usage: $0 [fileName] [option]"
-		echo "        options:"
-		echo "              -c: only compile"
-		echo "              -h: show this hints"
-		echo ""
-		echo "        Using a.asm as file name If there is no file indicated."
-		exit 0
-	else
-		fullFileName=$1
-		filename=$(echo $fullFileName|cut -f 1 -d '.')
-	fi
-	shift
-done
-echo "Full name is $fullFileName"
-echo "File name is $filename"
-dd if=/dev/zero of=myhd.img bs=512 count=10240
-nasm -f bin $fullFileName -o $filename.bin
-if [ $? != "0" ]; then
-    echo "nasm encounter a error"
-    exit 1
+fileCounts=0
+if [ $paramCounts -gt 0 ]; then
+	for i in $(seq $paramCounts):
+	do
+		filename="a"
+		fullFileName="a.asm"
+
+		if [ $1 == "-c" ]; then
+			onlyCompile=1
+		elif [ $1 == "-h" ]; then
+			echo "Usage: $0 [fileName] [option]"
+			echo "        options:"
+			echo "              -c: only compile"
+			echo "              -h: show this hints"
+			echo ""
+			echo "        [+]Use a.asm as file name If there is no file indicated."
+			echo "        [+]Write first input file if there are more than 1 files."
+			exit 0
+		else
+			fileCounts=$((fileCounts+1))
+			fullFileName=$1
+			filename=$(echo $fullFileName|cut -f 1 -d '.')
+			if [ $fileCounts -eq 1 ]; then
+				firstBin=$filename.bin
+			fi
+			
+			nasm -f bin $fullFileName -o $filename.bin
+			if [ $? != "0" ]; then
+				echo " ↑ nasm file $fullFileName encounter a error ↑ "
+				exit 1
+			fi
+		fi
+		shift
+	done
 fi
-dd if=a.bin of=myhd.img bs=512 count=1 conv=notrunc
+dd if=/dev/zero of=myhd.img bs=512 count=10240
+if [ $fileCounts -eq 0 ]; then
+	nasm -f bin a.asm -o a.bin
+	if [ $? != "0" ]; then
+		echo " ↑ nasm file a.asm encounter a error ↑ "
+		exit 1
+	fi
+fi
+dd if=$firstBin of=myhd.img bs=512 count=1 conv=notrunc
 if [ $onlyCompile -eq 0 ]; then
 	bochs -f mybochsrc
 else
