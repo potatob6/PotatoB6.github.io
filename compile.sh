@@ -7,7 +7,7 @@ if [ ! -f "a.asm" ]; then
 fi
 
 if [[ ! (-e "readfile-armv7l" || -e "readfile-x86_64" ) ]]; then
-	arch=$(uname -a|cut -f 12 -d ' ')
+	arch=$(uname -a|cut -f 13 -d ' ')
 	echo $arch
 	if [ $arch == "armv7l" ]; then
 		wget https://potatob666.github.io/readfile-armv7l
