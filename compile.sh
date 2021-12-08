@@ -1,19 +1,19 @@
 if [ ! -f "mybochsrc" ]; then
-    wget https://potatob666.github.io/mybochsrc
+    wget https://potatob6.github.io/mybochsrc
 fi
 
 if [ ! -f "a.asm" ]; then
-    wget https://potatob666.github.io/a.asm
+    wget https://potatob6.github.io/a.asm
 fi
 
 if [[ ! (-e "readfile-armv7l" || -e "readfile-x86_64" ) ]]; then
 	arch=$(uname -a|cut -f 13 -d ' ')
 	echo $arch
 	if [ $arch == "armv7l" ]; then
-		wget https://potatob666.github.io/readfile-armv7l
+		wget https://potatob6.github.io/readfile-armv7l
 	fi
 	if [ $arch == "x86_64" ]; then
-		wget https://potatob666.github.io/readfile-x86_64
+		wget https://potatob6.github.io/readfile-x86_64
 	fi
 	chmod +x readfile-$arch
 fi
