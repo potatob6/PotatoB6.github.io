@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,fieldset{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+        h3{
+            margin: 0 0;
+            text-align: center;
+            width: 100%;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <h3>手机通讯录管理器</h3>
+    <fieldset>
+        <legend>简易手机通讯录</legend>
+        姓名：<input type="text" id="name">
+        <br>
+        电话：<input type="number" id="phone">
+        <br>
+        <div>
+            <button onclick="saveInfo()">添加</button>
+            <button onclick="searchInfo()">查询</button>
+            <button onclick="deleteInfo()">删除</button>
+            <button onclick="clearInfo()">重置</button>
+        </div>
+        <br>
+        <textarea id="area" cols="30" rows="10" readonly></textarea>
+    </fieldset>
+    <h3>前端工作室设计</h3>
+    <h3>版权所有，2017-2020</h3>
+
+    <script>
+        function $(e) { return document.getElementById(e) }
+        var _name = $("name")
+        var phone = $("phone")
+        var area = $("area")
+        updateInfo()
+        function clearInfo(){
+            _name.value = ""
+            phone.value = ""
+        }
+        function saveInfo(){
+            if(_name.value==""||phone.value==""){
+                alert("请输入好姓名和电话号")
+                return 
+            }
+            localStorage.setItem(_name.value,phone.value)
+            clearInfo()
+            _name.focus()
+            updateInfo()
+        }
+        function updateInfo(){
+            area.value = "姓名\t\t电话\n"
+            for(var i = 0;i<localStorage.length;i++){
+                area.value += localStorage.key(i)+"\t\t"
+                area.value += localStorage.getItem(localStorage.key(i))+"\n"
+            }
+        }
+        function searchInfo(){
+            var _p = localStorage.getItem(_name.value)
+            if( _p == null){
+                alert("查无此人")
+                return
+            }
+            phone.value = _p
+        }
+        function deleteInfo(){
+            localStorage.removeItem(_name.value)
+            updateInfo()
+        }
+    </script>
+</body>
+</html>
